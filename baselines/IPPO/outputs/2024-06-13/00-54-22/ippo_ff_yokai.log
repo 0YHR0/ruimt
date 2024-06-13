@@ -1,0 +1,9 @@
+[2024-06-13 00:54:48,601][jax._src.callback][ERROR] - jax.io_callback failed
+Traceback (most recent call last):
+  File "C:\Users\YHR\Downloads\msc2024_rui\venv\lib\site-packages\jax\_src\callback.py", line 377, in io_callback_impl
+    return tree_util.tree_map(np.asarray, callback(*args))
+  File "C:\Users\YHR\Downloads\msc2024_rui\venv\lib\site-packages\jax\_src\callback.py", line 64, in __call__
+    return tree_util.tree_leaves(self.callback_func(*args, **kwargs))
+  File "C:\Users\YHR\Downloads\msc2024_rui\msc2024_rui\baselines\IPPO\ippo_ff_yokai.py", line 432, in callback
+    "total_rewards":  train_state.shaped_reward_coeff*traj_batch.shaped_reward.sum(axis=0).mean(axis=-1) + traj_batch.reward.sum(axis=0).mean(axis=-1), #  [jnp.array([13, 27, 41, 55,69,83,97,111]), :].mean(),
+AttributeError: 'TrainState' object has no attribute 'shaped_reward_coeff'

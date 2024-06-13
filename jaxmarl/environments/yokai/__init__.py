@@ -1,0 +1,1 @@
+from .yokai import Yokai
